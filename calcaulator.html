@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator-made by Ahmad</title>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box">
+            <input type="" placeholder="">
+            <div class="row">
+                <button class="r1 rana button">M+</button>
+            <button class="r1 rana button">[</button>
+                <button class="r1 rana button">%</button>
+                <button class="r1 mana button">/</button>
+            </div>
+            <div class="row-2">
+                <button class="r2 black button">7</button>
+                <button class="r2 black button">8</button>
+                <button class="r2 black button">9</button>
+                <button class="r2 mana button">*</button>
+            </div>
+            <div class="row-3">
+                <button class="r3 black button">4</button>
+                <button class="r3 black button">5</button>
+                <button class="r3 black button">6</button>
+                <button class="r3 mana button ">-</button>
+            </div>
+            <div class="row-4">
+                <button class="r4 black button">1</button>
+                <button class="r4 black button">2</button>
+                <button class="r4 black button">3</button>
+                <button class="r4 mana button">+</button>
+            </div>
+            <div class="row-5">
+                <button class="row5 black button ">0</button>
+                <button class="row5 black button">. </button>
+                <button class="row5 black button">C</button>
+               
+                <button class="row5 mana button">=</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+<style>
+    *{color:white;
+    font-family: sans-serif;
+}
+.con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+}
+.row .r1{
+   
+  border-radius: 3333px;
+  margin-top: 1vh;
+  font-size: 3rem;
+ 
+  
+ 
+
+}
+.row-2 .r2{
+ border-radius: 3333px;
+font-size: 3rem;
+margin-top: 1vh;
+
+}
+.row-3 .r3{
+     border-radius: 3333px;
+    font-size: 3rem;
+    margin-top: 1vh;
+}
+.row-4 .r4{
+     border-radius: 3333px;
+    font-size: 3rem;
+    margin-top: 1vh;
+}
+.row-5 .row5{
+     border-radius: 3333px;
+    font-size: 3rem;
+    margin-top: 1vh;
+ 
+
+}
+input{
+ height: 10vh;
+    width: 36vw;
+    font-size: 4.5rem;
+     background-color: black;
+     border: 3px solid rgb(92, 83, 83);
+     
+}
+.mana{
+    background-color: orange;
+    border: 0;
+  
+   
+}
+.mana:hover{
+    background-color: rgb(218, 188, 21);
+    transition-duration:1s ;
+}
+.rana{
+    border: 0;
+    background-color: rgb(194, 181, 181);
+}
+.black{
+    border: 0;
+    background-color: rgb(36, 32, 32);
+
+}
+.black:hover{
+    background-color: rgb(49, 44, 44);
+    transition-duration:1s ;
+
+}
+body{
+    background-color: black;
+}
+.button{
+    height: 13vh;
+    width:9vw;
+}
+.box{
+    border: 4px solid rgb(255, 255, 255);
+    padding: 4vh;
+}
+
+</style>
+<script>
+    let string="";
+
+let buttons=document.querySelectorAll('.button');
+Array.from(buttons).forEach((button) => {
+    button.addEventListener('click',(e)=> {
+
+        if(e.target.innerHTML == '=' ){
+            string=eval(string)
+             document.querySelector('input').value=string
+
+           
+            
+        }
+       else if(e.target.innerHTML == 'C'){
+            string=""
+              document.querySelector('input').value=string
+        }
+        else{
+        console.log(e.target)
+        string=string + e.target.innerHTML
+     document.querySelector('input').value=string
+     }
+})
+})
+</script>
+
+</html>
